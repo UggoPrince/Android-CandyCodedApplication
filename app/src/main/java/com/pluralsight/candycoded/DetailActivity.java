@@ -26,10 +26,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        this.createShareIntent();
-    }
 
-    private void createShareIntent() {
         Intent intent = DetailActivity.this.getIntent();
 
         if (intent != null && intent.hasExtra("position")) {
@@ -77,6 +74,11 @@ public class DetailActivity extends AppCompatActivity {
     // ***
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        createShareIntent();
         return super.onOptionsItemSelected(item);
+    }
+
+    private void createShareIntent() {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
     }
 }
