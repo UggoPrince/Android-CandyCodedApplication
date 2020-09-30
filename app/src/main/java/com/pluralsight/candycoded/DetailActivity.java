@@ -26,7 +26,10 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+        this.createShareIntent();
+    }
 
+    private void createShareIntent() {
         Intent intent = DetailActivity.this.getIntent();
 
         if (intent != null && intent.hasExtra("position")) {
